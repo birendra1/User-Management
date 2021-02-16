@@ -1,16 +1,18 @@
 <?php
+// contains Database
  include "./includes/db.php";
      if(!isset($_SESSION['username'])){
         header('location:index.php');
     }
 ?>
 
+<!-- Includes header file in each page -->
 <?php include "./includes/header.php"; ?>
 
-
+<!-- Includes Navigation file in each page -->
 <?php include "./includes/nav_bar.php"; ?>
 
-<!--  Fetch all suer date -->
+<!--  Fetch all user data  and display in tabular form -->
 
 	<div class="container" style="position: absolute;top: 25px;margin-left: 10%;width:95%">
 		<table class="table table-bordered table-stripped table-row table-hover table-condensed">
@@ -58,7 +60,8 @@
 			</td>
 				
 			</tr>
-			<?php 
+	<!-- contains While loop bracket -->
+	<?php 
 			}
 		}
 
@@ -66,19 +69,10 @@
 			
 		</table>
 	</div>
-
-	
 </div>
 
-
-
-<?php 
-
-
-
-?>
+<!-- This javascript function ask for confirmation before delete a user -->
 <script>
-
  function confirmToDelete($email){
 	 $value = document.getElementById('deleteUser').value;
 	 $res = confirm("Press OK to delete or Cancel."); 

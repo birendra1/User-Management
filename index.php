@@ -78,15 +78,20 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'
              <h4>LOGIN PANEL</h4>
              <hr>
          </div>
+         <!-- Section For Email Input -->
         <div class="form-group">
           <label for="email">Email address:</label>
           <input type="email" class="form-control" id="email" name="email" required="required">
         </div>
 
+        <!-- Section For Password Input -->
+
         <div class="form-group">
           <label for="password">Password:</label>
           <input type="password" class="form-control" id="password" name="password" required="required" >
         </div>
+
+        <!-- Section For Login Button -->
         <div class="text-center">
             <button type="submit" class="btn btn-danger btn-block btn-lg" value="login" name="login" >Login</button>
         </div>

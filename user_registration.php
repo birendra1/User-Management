@@ -101,16 +101,18 @@ if(isset($_POST['add_user'])){
   <form method="POST" action="user_registration.php" enctype="multipart/form-data">
     <h3>Personal Information</h3>
     <div class="container">
+
+    <!-- This division contains input for Name -->
       <div class="form-group">
         <label for="userName">Name</label>
         <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required="required">
       </div>
-
+<!-- This division contains input for Date of birth -->
       <div class="form-group">
         <label for="dob">DOB : </label>
         <input type="date" class="form-control" id="dob" name="dob" required="required">
       </div>
-
+<!-- This division contains input for gender -->
      <div class="form-group">
         <label for="Gender">Gender</label>
         <select name="gender" id="gender" class="form-control" >
@@ -120,6 +122,7 @@ if(isset($_POST['add_user'])){
         </select>
       </div>
 
+<!-- This division contains input for Marital status -->
       <div class="form-group">
         <label for="MaritalStatus">Marital Status</label>
         <select name="maritalStatus" id="maritalStatus" class="form-control">
@@ -130,6 +133,7 @@ if(isset($_POST['add_user'])){
       </div>
     </div>
 
+<!-- This division contains input for Profile photo -->
     <div class="form-group">
       <label for="profilePhoto"> Profile Photo</label>
       <input type="file" name="file" id="file" accept="image/*" required="required">
@@ -140,16 +144,19 @@ if(isset($_POST['add_user'])){
   <h3>Account Information</h3>
   <div class="container">
 
+<!-- This division contains input for email -->
     <div class="form-group ">
       <label for="email">Email:</label>
       <input type="email" class="form-control" id="email"  placeholder="Enter email" name="email" required="required" required="required">
       
+      <!-- This division contains input for password -->
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
       <input type="password" class="form-control" id="password" placeholder="Password" name="password" required="required" required="required">
     </div>
 
+<!-- This division contains input for Confirm Password -->
     <div class="form-group">
       <label for="confirm_password">Re-type Password:</label>
       <input type="password" class="form-control" id="confirm_password" placeholder="Re-type Password" name="confirm_password" required="required">
@@ -166,6 +173,7 @@ if(isset($_POST['add_user'])){
       </select>
     </div>
 
+<!-- This division contains input for address -->
     <div class="form-group">
       <label for="permanentAddress">Address : </label>
       <textarea rows="2" cols="40" name="permanentAddress" class="form-control" required="required">
@@ -173,6 +181,7 @@ if(isset($_POST['add_user'])){
       </textarea>
     </div>
 
+<!-- This division contains input for Mobile -->
       <div class="form-group">
       <label for="mobile">Mobile : </label>
       <input type="text" class="form-control" id="mobile" name="mobile" required="required">
@@ -254,6 +263,8 @@ if(isset($_POST['add_user'])){
         </div>
       </div>
       <br>
+
+      <!-- This division contains Registration Button -->
     <div class="container">
      <button type="submit" class="btn btn-primary btn-lg" value="add_user" name="add_user" style="width:100%;">Add User</button>
      <hr class="hr-3">

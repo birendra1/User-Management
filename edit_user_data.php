@@ -6,6 +6,7 @@
 
 $email = $_GET['email'];
 
+// This contains all data to update 
 if(isset($_POST['edit_user_data'])){
   // echo " You are here";
   $name = $_POST['name'];
@@ -49,8 +50,6 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
             $equery = "UPDATE  `education` SET matriculation = '$matriculation',intermediate = '$intermediate',graduation = '$graduation',post_graduation = '$post_graduation' WHERE email = $email";
             $education_result = mysqli_query($conn,$equery);
 
-            // echo '<script>confirm("Press a button!");</script>';
-            // header("Location: ./dashboard.php");
 
             echo "<script>
                     alert('Data is Updated');
@@ -60,10 +59,6 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
           else{
             // echo " You are outside else block";
           }
-
-  
-  // $query = "SELECT * from `user` INNER JOIN `education` on user.email = education.email where email = '$email'";
-
 
  ?>
 
@@ -83,12 +78,14 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
   <form method="POST" action="edit_user_data.php?email=<?=$email?>" enctype="multipart/form-data">
     <h3>Personal Information</h3>
     <div class="container">
+
+    <!-- This division contains input for user name -->
       <div class="form-group">
         <label for="userName">Name</label>
         <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required="required" value="<?php printf ("%s", $row["name"]); ?>">
       </div>
      
-
+    <!-- This division contains input for date of birth -->
       <div class="form-group">
         <label for="dob">DOB : </label>
         <input type="text" class="form-control" id="datepicker" name="dob" required="required"  value=" <?php echo date("d/m/Y", strtotime($row['dob'])); ?>" disabled>
@@ -100,7 +97,7 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
 </script>
      
       </div>
-
+    <!-- This division contains input for Gender -->
      <div class="form-group">
         <label for="Gender">Gender</label>
         <select name="gender" id="gender" class="form-control">
@@ -110,6 +107,7 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
         </select>
       </div>
 
+<!-- This division contains input for Marital status -->
       <div class="form-group">
         <label for="MaritalStatus">Marital Status</label>
         <select name="maritalStatus" id="maritalStatus" class="form-control">
@@ -120,6 +118,7 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
       </div>
     </div>
 
+<!-- This division contains input for profile photo -->
     <div class="form-group" >
       <label for="profilePhoto">Profile Photo</label>
       <?php $src = "./uploads/".$row['photo'];  ?>
@@ -132,17 +131,19 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
   <h3>Account Information</h3>
   <div class="container">
 
+<!-- This division contains input for email -->
     <div class="form-group ">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email"  placeholder="Enter email" name="email" required="required" value="<?php printf ('%s', $row['email']); ?>" disabled>
-      
+      <input type="email" class="form-control" id="email"  placeholder="Enter email" name="email" required="required" value="<?php printf ('%s', $row['email']); ?>" disabled> 
     </div>
+
+    <!-- This division contains input for password -->
     <div class="form-group">
       <label for="password">Password:</label>
       <input type="password" class="form-control" id="password" placeholder="Password" name="password" required="required" value="<?php printf ('%s', $row['password']); ?>">
     </div>
 
-
+<!-- This division contains input for address -->
     <div class="form-group">
       <label for="permanentAddress">Address : </label>
       <input type="text" width="40" name="permanentAddress" class="form-control" value="<?php printf ("%s", $row["permanent_address"]); ?>">
@@ -150,12 +151,14 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
       </textarea>
     </div>
 
+<!-- This division contains input for Mobile -->
       <div class="form-group">
       <label for="mobile">Mobile : </label>
       <input type="text" class="form-control" id="mobile" name="mobile" value="<?php printf ('%s', $row['mobile']); ?>">
      </div>
    
     <hr class="hr_3"></hr>
+    <!-- This division contains educational details -->
   <h3>Education</h3>
 
     <?php $row1 = $row['matriculation'];
@@ -238,7 +241,7 @@ $query = "UPDATE  `user` SET name = '$name',password = '$password',gender = '$ge
       <br>
 
 
-   
+   <!-- This division contains submit button to save data -->
      <button type="submit" class="btn btn-primary btn-lg"  name="edit_user_data" style="width:100%">Save</button>
 
      <br> <br>  <br>  
