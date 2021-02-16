@@ -1,5 +1,8 @@
 <?php
 	include "./includes/db.php";
+	    if(!isset($_SESSION['username'])){
+        header('location:index.php');
+    }
 	$email = $_GET['email'];
 	// $query = "SELECT * from `user` INNER JOIN `education` on user.email = education.email where email = '$email'";
 	$query = "SELECT * from `user` LEFT JOIN `education` on user.email = education.email where user.email = '$email'";

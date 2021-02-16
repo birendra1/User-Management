@@ -1,7 +1,9 @@
 <?php
  include "includes/db.php";
  
-
+    if(!isset($_SESSION['username'])){
+        header('location:index.php');
+    }
 
 if(isset($_POST['add_user'])){
   // echo " You are here";

@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','user_management');
+$conn = mysqli_connect('localhost','techamru_oye','X.6UpS64p-','techamru_ecom');
 
   // server should keep session data for AT LEAST 1 hour
   ini_set('session.gc_maxlifetime', 5000000);

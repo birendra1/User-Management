@@ -15,6 +15,7 @@
 
 .icon-bar {
   width: 90px;
+  display: block;
   background-color: #555;
 }
 
@@ -24,7 +25,7 @@
   padding: 16px;
   transition: all 0.3s ease;
   color: white;
-  font-size: 36px;
+  font-size: 22px;
 }
 
 .icon-bar a:hover {
@@ -38,5 +39,8 @@
 
 </head>
 <body>
+    
 
-<?php echo "Logged in user : ".$_SESSION['username'];
+<?php 
+echo "Logged in user : ".$_SESSION['username'];
+?>

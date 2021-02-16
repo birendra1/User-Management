@@ -1,6 +1,8 @@
 <?php
  include "includes/db.php";
- 
+    if(!isset($_SESSION['username'])){
+        header('location:index.php');
+    } 
 
 $email = $_GET['email'];
 

@@ -1,5 +1,8 @@
 <?php
  include "includes/db.php";
+ if(isset($_SESSION['username'])){
+     header('location:dashboard.php');
+ }
 if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])){
     
     $email = $_POST['email'];
@@ -54,7 +57,7 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'
 <!DOCTYPE html>
  <html>
  <head>
-  <title>Index</title>
+  <title>Login Page</title>
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -65,10 +68,16 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background:#dedede;
-    border-radius:15px;padding:15px" >
+    
+    border-radius:6px; padding:15px; -moz-box-shadow: 0 0 3px #a6a6a6;
+      -webkit-box-shadow: 0 0 4px #a6a6a6;
+      box-shadow: 0px 0px 3px #a6a6a6; background:#6b78b5; color:#fff;" >
 
-     <form action="index.php" method="POST"  name="loginForm">
+     <form action="index.php" method="POST"  name="loginForm" style="padding:20px;">
+         <div class="text-center">
+             <h4>LOGIN PANEL</h4>
+             <hr>
+         </div>
         <div class="form-group">
           <label for="email">Email address:</label>
           <input type="email" class="form-control" id="email" name="email" required="required">
@@ -78,8 +87,9 @@ if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'
           <label for="password">Password:</label>
           <input type="password" class="form-control" id="password" name="password" required="required" >
         </div>
-
-        <button type="submit" class="btn btn-primary" value="login" name="login" >Login</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-danger btn-block btn-lg" value="login" name="login" >Login</button>
+        </div>
 
       </form> 
     </div>
